@@ -11,7 +11,7 @@ struct STUDENT_DATA {
 };
 
 // Defining the PRE_RELEASE macro to enable pre-release mode
-#define PRE_RELEASE
+//#define PRE_RELEASE
 
 int main() {
     // Creating a vector to store student data
@@ -32,8 +32,8 @@ int main() {
         if (comma_pos != std::string::npos) {
             // Creating a student object and populate first_name and last_name
             STUDENT_DATA student;
-            student.first_name = line.substr(0, comma_pos);
-            student.last_name = line.substr(comma_pos + 1);
+            student.last_name = line.substr(0, comma_pos);
+            student.first_name = line.substr(comma_pos + 1);
 
             // Adding the student to the vector
             student_vector.push_back(student);
