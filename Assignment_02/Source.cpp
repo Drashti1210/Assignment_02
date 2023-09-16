@@ -27,8 +27,8 @@ int main() {
         size_t commaPos = line.find(",");
         if (commaPos != std::string::npos) {
             // Extracting first name and last name
-            std::string firstName = line.substr(0, commaPos);
-            std::string lastName = line.substr(commaPos + 1);
+            std::string lastName = line.substr(0, commaPos);
+            std::string firstName = line.substr(commaPos + 1);
 
             // Creating a student object and adding it to the vector
             STUDENT_DATA student;
@@ -40,13 +40,15 @@ int main() {
 
     // Closing the input file
     inputFile.close();
-
-    // Printing the student data stored in the vector
+    // Debug functionality (only if compiled in debug mode)
+#ifdef _DEBUG
     std::cout << "Information of students" << std::endl;
     std::cout << std::endl;
-    for (const STUDENT_DATA& student : studentVector) {
+    for (const auto& student : studentVector) {
+
         std::cout << "First Name: " << student.firstName << ", Last Name: " << student.lastName << std::endl;
     }
+#endif
 
    
     return 0; // Exit successfully
